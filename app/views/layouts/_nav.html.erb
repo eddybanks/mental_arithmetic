@@ -1,0 +1,19 @@
+<nav class="navbar navbar-full navbar-light" id="main-nav">
+  <div class="container">
+    <%= link_to 'NeuroTests', root_path, class: 'navbar-brand' %>
+    <ul class="nav navbar-nav">
+      <li class="nav-item dropdown"><%= link_to 'Tests', '#', id: 'tests-dropdown', class: 'nav-link dropdown-toggle',
+        data: { toggle: 'dropdown'}, aria: { haspopup: 'true', expanded: 'false'} %>
+        <div class="dropdown-menu" aria-labelledby="tests-dropdown">
+          <% test_list.each do |test| %>
+            <%= link_to test.name, test, class: 'dropdown-item' %>
+          <% end %>
+        </div>
+      </li>
+      <li class="nav-item"><%= link_to 'About', about_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'FAQs', faqs_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'Contact Us', contact_path, class: 'nav-link' %></li>
+    </ul>
+  </div>
+
+</nav>

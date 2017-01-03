@@ -1,0 +1,37 @@
+// shades
+$dark-fade: rgba(0,0,0,0.1);
+$grey-fade: rgba(150,150,150,0.1);
+$light-fade: rgba(255,255,255,0.1);
+
+//blues
+$tiffany_blue: rgba(7, 190, 184, 1);
+$medium_turq: rgba(61, 204, 199, 1);
+$mid_blue: rgba(104, 216, 214, 1);
+$blue_lagoon: rgba(156, 234, 239, 1);
+$sky_blue: rgba(196, 255, 249, 1);
+
+/** fonts **/
+
+$arima: 'Arima Madurai', cursive;
+$slabo: 'Slabo 27px', serif;
+$caveat: 'Caveat', cursive;
+$oxygen: 'Oxygen', sans-serif;
+$dosis: 'Dosis', sans-serif;
+
+/** images **/
+$bg: url(<%= image_path 'bg.jpg' %>) no-repeat center fixed;
+
+
+/** mixins **/
+@mixin font($family, $size: '1em', $color: '#000') {
+  font-family: $family;
+  font-size: $size;
+  color: $color;
+}
+
+@mixin box($height: 30vh, $padding: 0, $margin: 0, $bg: $dark-fade) {
+  min-height: $height;
+  padding: $padding;
+  margin: $margin;
+  background: $bg;
+}

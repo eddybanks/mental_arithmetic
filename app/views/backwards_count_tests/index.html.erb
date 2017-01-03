@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Backwards Count Tests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Accuracy rating</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @backwards_count_tests.each do |backwards_count_test| %>
+      <tr>
+        <td><%= backwards_count_test.accuracy_rating %></td>
+        <td><%= link_to 'Show', backwards_count_test %></td>
+        <td><%= link_to 'Edit', edit_backwards_count_test_path(backwards_count_test) %></td>
+        <td><%= link_to 'Destroy', backwards_count_test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Backwards Count Test', new_backwards_count_test_path %>

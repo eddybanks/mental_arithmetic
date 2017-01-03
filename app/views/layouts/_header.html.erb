@@ -1,0 +1,11 @@
+<header>
+  <h1 class="page-header"><%= @page_header %></h1>
+  <% if @page_subheader %>
+    <h3 class="page-subheader"><%= @page_subheader %></h3>
+  <% end %>
+  <div class="flash">
+    <% if notice.present? %>
+      <p id="notice"><%= notice %></p>
+    <% end %>
+  </div>
+</header>

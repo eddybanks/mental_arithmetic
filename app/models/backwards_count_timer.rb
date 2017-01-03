@@ -1,0 +1,2 @@
+class BackwardsCountTimer < ApplicationRecord
+end

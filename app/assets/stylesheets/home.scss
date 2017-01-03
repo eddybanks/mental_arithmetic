@@ -1,0 +1,9 @@
+.large-box {
+  @include font($arima);
+  @include box(40vh, 10%, auto);
+}
+
+.test-options-box {
+  @include font($dosis);
+  @include box(40vh, 3%, auto, $medium_turq);
+}

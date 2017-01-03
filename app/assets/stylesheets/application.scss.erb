@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai|Caveat|Dosis|Oxygen|Slabo+27px');
+@import "bootstrap";
+@import "font-awesome";
+@import "variables";
+@import "layout";
+@import "home";
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  height: 100%;
+  width: 100%;
+  background: $blue_lagoon;
+}
+
+.inner-wrapper {
+  min-height: 85vh;
+}
+
+.page-header {
+  border-bottom: 1px solid rgba($tiffany_blue, 0.2);
+  @include box(10%,2% 1%, 0 0 1% 0, $light-fade);
+  @include font($oxygen);
+}

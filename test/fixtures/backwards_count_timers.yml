@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  random_num: 1
+  time_to_err: 1
+  time_overall: 1
+
+two:
+  random_num: 1
+  time_to_err: 1
+  time_overall: 1

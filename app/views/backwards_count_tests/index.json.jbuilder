@@ -1,0 +1,1 @@
+json.array! @backwards_count_tests, partial: 'backwards_count_tests/backwards_count_test', as: :backwards_count_test
