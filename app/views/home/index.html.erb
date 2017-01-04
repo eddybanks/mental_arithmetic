@@ -7,9 +7,13 @@
       <h3 id="test-options">Select the test you would like to partake in from below:</h3>
       <% test_list.each do |test| %>
         <div class="col-sm-6 col-xs-12">
-          <div class="card card-block">
-            <h3 class="card-title"><%= link_to test.name, test %></h3>
-            <p class="card-test"><%= simple_format test.description %></p>
+          <div class="card card-inverse card-secondary text-xs-center">
+            <div class="card-header">
+              <h3 class="card-title"><%= link_to test.name, test %></h3>
+            </div>
+            <div class="card-block">
+              <p class="card-test"><%= simple_format test.description %></p>
+            </div>
           </div>
         </div>
       <% end %>

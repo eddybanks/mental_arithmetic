@@ -10,30 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170103173302) do
+ActiveRecord::Schema.define(version: 20170103232655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "backwards_count_tests", force: :cascade do |t|
-    t.integer  "accuracy_rating"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  create_table "backwards_count_timers", force: :cascade do |t|
-    t.integer  "random_num"
-    t.integer  "time_to_err"
-    t.integer  "time_overall"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
 
   create_table "tests", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "timers", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "random_num"
+    t.float    "time_to_err"
+    t.float    "time_overall"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "trial_id"
+    t.index ["trial_id"], name: "index_timers_on_trial_id", using: :btree
+  end
+
+  create_table "trials", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "accuracy_rating"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "test_id"
+    t.index ["test_id"], name: "index_trials_on_test_id", using: :btree
+  end
+
+  create_table "user_tests", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "test_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["test_id"], name: "index_user_tests_on_test_id", using: :btree
+    t.index ["user_id"], name: "index_user_tests_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,4 +72,8 @@ ActiveRecord::Schema.define(version: 20170103173302) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "timers", "trials"
+  add_foreign_key "trials", "tests"
+  add_foreign_key "user_tests", "tests"
+  add_foreign_key "user_tests", "users"
 end

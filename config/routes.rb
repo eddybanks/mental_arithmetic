@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :backwards_count_tests
-  resources :tests
-  
+  resources :tests do
+    resources :trials
+  end
+
   root                  'home#index'
 
   get 'about',      to: 'home#about'
