@@ -16,6 +16,7 @@ gem 'kaminari'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'chartkick'
+gem 'vuejs-rails'
 
 
 group :development, :test do

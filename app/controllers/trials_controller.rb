@@ -6,6 +6,7 @@ class TrialsController < ApplicationController
   # GET /trials.json
   def index
     @trials = @test.trials.all
+    @page_header = "List of Trials for #{@test.name}"
   end
 
   # GET /trials/1

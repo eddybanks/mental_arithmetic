@@ -4,5 +4,15 @@
 //= require Chart.bundle
 //= require chartkick
 //= require bootstrap-sprockets
+//= require vue
+//= require vue-router
+//= require vue-resource
 //= require turbolinks
 //= require_tree .
+
+
+let startup = () => {
+  reverse_count()
+}
+
+$(document).on('load:turbolinks', startup)

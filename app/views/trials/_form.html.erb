@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name, label: 'Trial #', collection: 1..100 %>
+    <%= f.input :name, collection: ['Trial 1', 'Trial 2', 'Trial 3', 'Trial 4', 'Trial 5'] %>
     <% if @page_header == "Edit Trial" %>
       <%= f.input :accuracy_rating, collection: 1..10 %>
     <% end %>
