@@ -12,7 +12,7 @@
 
 
 let startup = () => {
-  reverse_count()
+  contact_function()
 }
 
-$(document).on('load:turbolinks', startup)
+$(document).on('turbolinks:load', startup)
