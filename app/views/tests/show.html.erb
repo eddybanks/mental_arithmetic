@@ -2,5 +2,6 @@
   <%= simple_format @test.description %>
 </p>
 <div class="action-buttons">
-  <%= link_to 'Start Test', new_test_trial_path(@test), class: 'btn btn-info' %>
+  <%= link_to 'Start Test', '#reverse_count_modal', class: 'btn btn-info', data: { toggle: 'modal', target: '#reverse_count_modal' } %>
 </div>
+<%= render '/tests/options/reverse_count' %>

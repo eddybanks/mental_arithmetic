@@ -1,6 +1,7 @@
 <section id="contact-section">
   <div id="contact-form">
-    {{ message }}
-    <input type="text" name="" value="" v-model="message">
+    {{ countMessage() }}
+    {{ limitMessage() }}
+    <textarea v-model="message"></textarea>
   </div>
 </section>
