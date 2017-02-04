@@ -1,7 +1,11 @@
 <section id="contact-section">
-  <div id="contact-form">
-    {{ countMessage() }}
-    {{ limitMessage() }}
-    <textarea v-model="message"></textarea>
-  </div>
+  <form id="contact-form" class="container">
+    <div class="form-group">
+      <label for="contact-message">
+        Enter your message
+        <span class="xs-pull-right"> [ {{ limitMessage() }} ]</span>
+      </label>
+      <textarea v-model="message" class="form-control" id="contact-message" rows="3"></textarea>
+    </div>
+  </form>
 </section>

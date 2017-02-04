@@ -5,11 +5,18 @@
         <h3 class="modal-title">Mental Arithmetic</h3>
       </div>
       <div class="modal-body">
-        <button v-on:click={{ generateRandom() }}>Generate random Number</button>
-        {{ randomNumber }}
+        <button v-on:click="generateRandom" class="btn btn-secondary">Click to generate random number (1 ~ 17)</button>
+        <br />
+        <div class="reverse-count-content">
+          <h5 class="rand-header">The random number is {{ randomNumber }}</h5>
+          <p class="rand-values">Values counting backwards from 100 by {{ randomNumber}} are: </p>
+          <ol>
+            <li v-for="num in reverseNumbers">{{ num.value }}</li>
+          </ol>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" name="button"></button>
+        <button type="button" name="button" class="btn btn-sm btn-secondary">X</button>
       </div>
     </div>
   </div>

@@ -12,16 +12,17 @@ let contact_function = () => {
         this.message = this.message.split('').reverse().join('')
       },
       countMessage: function() {
-        this.count = this.message.length
+        x = this.message.length + " letter"
+        this.count = this.message.length == 1 ? x : x + "s"
         return this.count
       },
       limitMessage: function() {
-        if(this.countMessage() > 500) {
-          let extra = this.countMessage() - 500
-          this.warning = "The message has " + extra + "extra words"
+        if(this.message.length > 500) {
+          x = this.message.length - 500
+          this.warning = "The message has " + x + " extra letter" + (x == 1 ? "" : "s")
         }
         else{
-          this.warning = null
+          this.warning = this.countMessage()
         }
         return this.warning
       }
