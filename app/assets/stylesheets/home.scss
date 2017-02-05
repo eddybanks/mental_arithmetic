@@ -7,3 +7,9 @@
   @include font($dosis);
   @include box(40vh, 3%, auto, $medium_turq);
 }
+
+#contact-form {
+  padding: 2%;
+  background: $dark-fade;
+  border-radius: 2px;
+}

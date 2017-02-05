@@ -1,8 +1,9 @@
 <section id="contact-section">
+  <h5>Hello, <%= current_user.first_name.present? ? current_user.first_name : current_user.email %></h5>
+  <p>Feel free to drop us a line</p>
   <form id="contact-form" class="container">
     <div class="form-group">
       <label for="contact-message">
-        Enter your message
         <span class="xs-pull-right"> [ {{ limitMessage() }} ]</span>
       </label>
       <textarea v-model="message" class="form-control" id="contact-message" rows="3"></textarea>
