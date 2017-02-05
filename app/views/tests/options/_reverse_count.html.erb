@@ -7,12 +7,14 @@
       <div class="modal-body">
         <button v-on:click="generateRandom" class="btn btn-secondary" id="randgen-btn">Click to generate random number (1 ~ 17)</button>
         <br />
-        <div class="reverse-count-content">
-          <h5 class="rand-header">The random number is {{ randomNumber }}</h5>
-          <p class="rand-values">Values counting backwards from 100 by {{ randomNumber}} are: </p>
-          <ul class="modal-list">
-            <li v-for="num in reverseNumbers" v-bind:class="randCol">{{ num.value }}</li>
-          </ul>
+        <h5 class="rand-header">The random number is {{ randomNumber }}</h5>
+        <div class="btn-group" data-toggle="buttons" id="reverse-count-actions">
+          <%= link_to "User input Option", '#', class: 'btn btn-info' %>
+          <%= link_to "Timed Option", '#', class: 'btn btn-warning' %>
+          <%= link_to "Show Count Distribution", '#', class: 'btn btn-danger', data: { target: '#reverse-count-content', toggle: 'collapse'} %>
+        </div>
+        <div class="randgen-main">
+          <%= render 'tests/options/show_count' %>
         </div>
       </div>
     </div>

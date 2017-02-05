@@ -1,0 +1,6 @@
+<div id="reverse-count-content" class="collapse">
+  <p class="rand-values">Values counting backwards from 100 by {{ randomNumber}} are: </p>
+  <ul class="modal-list">
+    <li v-for="num in reverseNumbers" v-bind:class="randCol">{{ num.value }}</li>
+  </ul>
+</div>
