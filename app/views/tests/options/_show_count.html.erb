@@ -1,4 +1,5 @@
-<div id="reverse-count-content" class="collapse">
+<div class="tab-pane active reverse-count-tab" id="reverse-count-content" role="tabpanel">
+  <h5>Count Distribution</h5>
   <p class="rand-values">Values counting backwards from 100 by {{ randomNumber}} are: </p>
   <ul class="modal-list">
     <li v-for="num in reverseNumbers" v-bind:class="randCol">{{ num.value }}</li>
